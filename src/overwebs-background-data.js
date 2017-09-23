@@ -95,10 +95,10 @@ const mapBackgrounds = map => {
 };
 
 const backgroundSets = {
-  // halloween: {
-  //   reaper: mapBackgrounds('halloween'),
-  //   mercy: mapBackgrounds('halloween'),
-  // },
+  halloween: {
+    reaper: mapBackgrounds('halloween'),
+    mercy: mapBackgrounds('halloween')
+  },
   hollywood: {
     tracer: mapBackgrounds('hollywood'),
     bastion: mapBackgrounds('hollywood')
@@ -120,9 +120,9 @@ const backgroundSets = {
     reaper: mapBackgrounds('hanamura'),
     sombra: mapBackgrounds('hanamura')
   },
-  // kings_row: {
-  //   reinhardt: mapBackgrounds('kings_row'),
-  // },
+  kings_row: {
+    reinhardt: mapBackgrounds('kings_row')
+  },
   temple_of_anubis: {
     dva: mapBackgrounds('temple_of_anubis'),
     pharah: mapBackgrounds('temple_of_anubis')
@@ -130,25 +130,6 @@ const backgroundSets = {
 };
 
 class OverwebsBackgroundData extends GluonElement {
-  static get properties() {
-    return {
-      backgrounds: {
-        type: Object,
-        notify: true,
-        readOnly: true
-      },
-      backgroundSelection: {
-        type: String,
-        notify: true,
-        readOnly: true
-      },
-      select: {
-        type: String,
-        observer: '_selectBackgrounds'
-      }
-    };
-  }
-
   static get observedAttributes() {
     return ['select'];
   }
@@ -240,7 +221,7 @@ class OverwebsBackgroundData extends GluonElement {
         // Use the given sources if they are defined, otherwise infer the source
         let backgroundVideo = backgroundData[background].video || `${this.backgroundSelection}${background}.mp4`;
         backgroundVideo = `${assetPath}${backgroundVideo}`;
-        let backgroundImage = backgroundData[background].image || `${background}.jpg`;
+        let backgroundImage = backgroundData[background].image || `${this.backgroundSelection}${background}.jpg`;
         backgroundImage = `${assetPath}${backgroundImage}`;
 
         if (backgroundData[background].video !== false) {
