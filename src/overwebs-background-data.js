@@ -220,9 +220,9 @@ class OverwebsBackgroundData extends GluonElement {
       if (!backgroundData[background].mirror) {
         // Use the given sources if they are defined, otherwise infer the source
         let backgroundVideo = backgroundData[background].video || `${this.backgroundSelection}${background}.mp4`;
-        backgroundVideo = `${assetPath}${backgroundVideo}`;
+        backgroundVideo = `${assetPath}/${backgroundVideo}`;
         let backgroundImage = backgroundData[background].image || `${this.backgroundSelection}${background}.jpg`;
-        backgroundImage = `${assetPath}${backgroundImage}`;
+        backgroundImage = `${assetPath}/${backgroundImage}`;
 
         if (backgroundData[background].video !== false) {
           backgroundData[background].video = backgroundVideo;
