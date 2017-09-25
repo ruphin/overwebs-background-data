@@ -1,6 +1,6 @@
 import { GluonElement } from '../gluonjs/gluon.js';
 
-const assetPath = (window.modulesAssetPath && window.modulesAssetPath('overwebs-background-data') + '/') || '';
+const assetPath = (window.modulesAssetPath && window.modulesAssetPath('overwebs-background-data') + '/assets') || '/assets';
 
 const mapBackgrounds = map => {
   return {
