@@ -16,13 +16,14 @@
     "gulp-sourcemaps": "^2.6.1"
   },
   "dependencies": {
-    "gluonjs": "^2.0.0-preview.4"
+    "gluonjs": "^2.0.2"
   },
   "scripts": {
     "build": "gulp",
     "dev": "gulp serve",
     "publish": "git add overwebs-background-data.js",
-    "install": "([ -d 'assets' ] && exit 0) || wget --no-check-certificate https://github.com/ruphin/overwebs-background-data/tarball/v$npm_package_version -O - | tar xz --strip-components 1  --wildcards --no-anchored 'assets/*'"
+    "install":
+      "([ -d 'assets' ] && exit 0) || wget --no-check-certificate https://github.com/ruphin/overwebs-background-data/tarball/v$npm_package_version -O - | tar xz --strip-components 1  --wildcards --no-anchored 'assets/*'"
   },
   "version": "0.0.4"
 }
