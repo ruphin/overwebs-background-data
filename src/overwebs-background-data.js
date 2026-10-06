@@ -1,4 +1,4 @@
-import { GluonElement } from '../gluonjs/gluon.js';
+import { GluonElement } from 'gluonjs/gluon.js';
 
 const assetPath = (window.modulesAssetPath && window.modulesAssetPath('overwebs-background-data') + '/assets') || '/assets';
 
